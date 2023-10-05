@@ -117,6 +117,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			modalContent.appendChild(player);
 
+			player.addEventListener('fullscreenchange', () => {
+				if (document.fullscreenElement === player && !player.allowFullscreen) {
+					document.exitFullscreen();
+				}
+			});
+
 			player.addEventListener('loadedmetadata', function () {
 				const videoDuration = player.duration * 1000;
 
