@@ -138,9 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		const currentStory = document.querySelector('.stories__item.active');
 		const content = JSON.parse(currentStory.querySelector('.stories__data').textContent);
 
-		console.log(index);
-		console.log(content);
-
 		processStory(index + 1, content, currentStory);
 	});
 
