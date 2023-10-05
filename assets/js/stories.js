@@ -112,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			player.autoplay = true;
 			player.muted = true;
 			player.controls = false;
+			player.allowFullscreen = false;
 			player.src = url;
 
 			modalContent.appendChild(player);
