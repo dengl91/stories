@@ -113,17 +113,20 @@ document.addEventListener('DOMContentLoaded', () => {
 			player.muted = true;
 			player.controls = false;
 			player.allowFullscreen = false;
+			player.allowsInlineMediaPlayback = true;
+			player.setAttribute('webkit-playsinline', true);
+			player.setAttribute('playsinline', true);
 			player.src = url;
 
 			modalContent.appendChild(player);
 
 			player.addEventListener('fullscreenchange', () => {
-				if (document.fullscreenElement === player && !player.allowFullscreen) {
-					document.exitFullscreen();
-				}
+				document.exitFullscreen();
 			});
 
 			player.addEventListener('loadedmetadata', function () {
+				document.exitFullscreen();
+
 				const videoDuration = player.duration * 1000;
 
 				fillProgressItem(index, videoDuration);
