@@ -120,13 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			modalContent.appendChild(player);
 
-			player.addEventListener('fullscreenchange', () => {
-				document.exitFullscreen();
-			});
-
 			player.addEventListener('loadedmetadata', function () {
-				document.exitFullscreen();
-
 				const videoDuration = player.duration * 1000;
 
 				fillProgressItem(index, videoDuration);
